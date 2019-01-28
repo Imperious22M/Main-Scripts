@@ -1,6 +1,6 @@
 #!/bin/bash
 Stopftp(){
-echo "removing ftp service, note this only works with ftp not with vsftpd, etc" 
+echo "removing ftp service, note: this only works with ftp not with vsftpd, etc" 
 
 sudo service ftp stop
 sudo apt-get remove ftp
@@ -35,11 +35,14 @@ echo " firewall installed, enabling firewall"
 sudo ufw enable
 }
 
-hacking() {
+hacking() { // Fotogt what this did
 apt-cache search 
+
+
+
 }
 
-DeleteFiles(){
+DeleteFiles(){ // Deletes all Media Files
 echo "Deleting Files, Please Wait"
 #3ga *.aac *.aiff *.amr *.ape *.arf *.asf *.asx *.cda *.dvf *.flac *.gp4 *.gp5 *.gpx *.logic *.m4a *.m4b*.midi *.pcm *.rec *.snd *.sng *.uax *.wav *.wma *.wpl *.zab
 #->Video
@@ -123,12 +126,12 @@ DeleteFiles
 
 
 
-echo "Chose 1 to start"
+echo "Chose 1 to start, 2 for Root priv File."
 read Start
 if [ $Start == '1' ]; then
 Gofun
 elfi [ $Start == '2' ]; then
-disable root 
+disableroot 
 else
 echo " exiting... "
 cd $(pwd)
